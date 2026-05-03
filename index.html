@@ -1,21 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi página</title>
-    <style>
-        body {
-            background-color: #111;
-            color: white;
-            text-align: center;
-            font-family: Arial;
-        }
-        h1 {
-            color: #00ffcc;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alma de Monte</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+header {
+    background: #0f3d2e;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #00ffcc;
+}
+
+.container {
+    padding: 20px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.precio {
+    color: #00ffcc;
+    font-size: 18px;
+}
+
+button {
+    background: #00ffcc;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0f3d2e;
+}
+</style>
 </head>
+
 <body>
-    <h1>Bienvenido a Alma de Monte 🌿</h1>
-    <p>Sandwiches y comida artesanal</p>
+
+<header>
+    <h1>🌿 Alma de Monte</h1>
+    <p>Comida artesanal y natural</p>
+</header>
+
+<div class="container">
+
+    <h2>🍔 Menú</h2>
+
+    <div class="productos">
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="">
+            <h3>Sandwich de Milanesa</h3>
+            <p>Con lechuga, tomate y salsa especial</p>
+            <p class="precio">Bs 20</p>
+            <button onclick="pedir('Sandwich de Milanesa')">Pedir</button>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="">
+            <h3>Sandwich de Pollo</h3>
+            <p>Pollo, huevo, lechuga y tomate</p>
+            <p class="precio">Bs 18</p>
+            <button onclick="pedir('Sandwich de Pollo')">Pedir</button>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="">
+            <h3>Sandwich Vegetal</h3>
+            <p>Palta, tomate y pan francés</p>
+            <p class="precio">Bs 15</p>
+            <button onclick="pedir('Sandwich Vegetal')">Pedir</button>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>📞 Pedidos por WhatsApp</p>
+    <p>Tu número aquí</p>
+</footer>
+
+<script>
+function pedir(producto) {
+    let numero = "591XXXXXXXX"; // ← cambia por tu número
+    let mensaje = "Hola, quiero pedir: " + producto;
+    let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+    window.open(url, "_blank");
+}
+</script>
+
 </body>
 </html>
